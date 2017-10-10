@@ -2,11 +2,11 @@
 
 set -ex
 
-INSTALL_FOLDER=/opt/nwrfcsdk/
+INSTALL_FOLDER=/tmp/nwrfcsdk/
 
 mkdir -p $INSTALL_FOLDER
-cp 13-20004565.SAR $INSTALL_FOLDER
-cp SAPCAR $INSTALL_FOLDER
+cp nwrfcsdk/13-20004565.SAR $INSTALL_FOLDER
+cp nwrfcsdk/SAPCAR $INSTALL_FOLDER
 cd $INSTALL_FOLDER
 chmod +x SAPCAR
 ./SAPCAR -xvf 13-20004565.SAR
@@ -38,5 +38,3 @@ cd -
 ruby setup.rb config --with-nwrfcsdk-dir=/usr/sap/nwrfcsdk
 ruby setup.rb setup
 ruby setup.rb install
-
-
